@@ -9,9 +9,9 @@ game assets. ES modules with TypeScript declarations; Node.js **22.12+**. Runtim
 dependencies are `@lewismoten/gamemaker-sandbox-engine` and
 `@lewismoten/gamemaker-sandbox-archives` (supported ranges in `package.json`).
 
-Install from GitHub Packages with a token that has `read:packages` access. From the consuming project, configure the scope and sign in before installing:
+From npmjs (no token needed): `npm install --save-dev @lewismoten/gamemaker-sandbox-tools`.
 
-From npmjs (no token needed): `npm install @lewismoten/gamemaker-sandbox-tools`. From GitHub Packages:
+From GitHub Packages, with a token that has `read:packages` access: from the consuming project, configure the scope and sign in before installing:
 
 ```sh
 npm config set @lewismoten:registry https://npm.pkg.github.com/ --location=project
