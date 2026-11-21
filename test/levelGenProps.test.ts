@@ -1,7 +1,7 @@
 // Locks, keys, treasure and monsters in generated layouts: the key-before-lock proof over 200 seeds.
 import { describe, expect, it } from 'vitest';
-import type { RoleMap } from '@lewismoten/gamemaker-sandbox-tools/kit/blockRoles';
-import { generate, proveResult, type GenKind } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen';
+import type { RoleMap } from '../src/kit/blockRoles';
+import { generate, proveResult, type GenKind } from '../src/kit/levelGen/index';
 
 const set = (...pairs: [number, string[], number?][]): RoleMap =>
   Object.fromEntries(pairs.map(([n, roles, pair]) => [n, { roles, ...(pair ? { pair } : {}) }])) as RoleMap;

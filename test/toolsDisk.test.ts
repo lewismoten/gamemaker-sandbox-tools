@@ -3,7 +3,7 @@ import { expect, it } from 'vitest';
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { Disk, dosText } from '@lewismoten/gamemaker-sandbox-tools/kit/disk';
+import { Disk, dosText } from '../src/kit/disk';
 it('writes lowercase DOS names and removes stale generated output', () => {
   const dir = mkdtempSync(join(tmpdir(), 'native-disk-'));
   try {

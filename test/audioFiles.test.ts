@@ -1,7 +1,7 @@
 // Source audio conversion keeps VOC bytes exact, bounds output and never uses a shell.
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { execFileSync } from 'node:child_process';
-import { audioFileToVoc, decodeAudioFile } from '@lewismoten/gamemaker-sandbox-tools/audio-files';
+import { audioFileToVoc, decodeAudioFile } from '../src/audioFiles';
 vi.mock('node:child_process', () => ({ execFileSync: vi.fn() }));
 const run = vi.mocked(execFileSync);
 afterEach(() => vi.resetAllMocks());

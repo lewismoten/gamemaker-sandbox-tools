@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { audioFileToVoc, decodeAudioFile } from '@lewismoten/gamemaker-sandbox-tools/audio-files';
+import { audioFileToVoc, decodeAudioFile } from '../src/audioFiles';
 vi.mock('node:child_process', () => ({ execFileSync: vi.fn() }));
 const decoder = vi.mocked(execFileSync);
 let temp: string;

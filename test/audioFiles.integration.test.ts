@@ -5,7 +5,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { audioFileToVoc } from '@lewismoten/gamemaker-sandbox-tools/audio-files';
+import { audioFileToVoc } from '../src/audioFiles';
 
 const available = spawnSync('ffmpeg', ['-version'], { stdio: 'ignore' }).status === 0;
 const pcm = Uint8Array.from({ length: 1024 }, (_, i) => i & 255);

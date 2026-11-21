@@ -1,6 +1,6 @@
 // Public, browser-safe indexed drawing APIs preserve dimensions, masks and shared-cell fills.
 import { describe, expect, it } from 'vitest';
-import { Pixels, turn90, turn180, flipX, flipY, shiftPixels, floodFill } from '@lewismoten/gamemaker-sandbox-tools/images';
+import { Pixels, turn90, turn180, flipX, flipY, shiftPixels, floodFill } from '../src/images';
 
 describe('indexed surface tools', () => {
   it('transforms non-square pictures without losing palette indices or changing the source', () => {

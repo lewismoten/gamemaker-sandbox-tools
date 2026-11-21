@@ -1,6 +1,6 @@
 // Quantized colors reflect used pixels and their frequency, not unused palette entries.
 import { describe, expect, it } from 'vitest';
-import { medianCutRgba } from '@lewismoten/gamemaker-sandbox-tools/images';
+import { medianCutRgba } from '../src/images';
 
 describe('portable RGBA quantization', () => {
   const image = { width: 4, height: 1, data: Uint8Array.of(255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 0, 0, 255, 255) };

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { Facing, RoleMap } from '@lewismoten/gamemaker-sandbox-tools/kit/blockRoles';
-import { generate, proveResult, verifyReach, type GenKind, type GenResult } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen';
+import type { Facing, RoleMap } from '../src/kit/blockRoles';
+import { generate, proveResult, verifyReach, type GenKind, type GenResult } from '../src/kit/levelGen/index';
 
 type E = { roles: string[]; facing?: Facing; pair?: number };
 const map = (e: Record<number, E>): RoleMap => e as unknown as RoleMap;

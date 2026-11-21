@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import { BLEN } from '@lewismoten/gamemaker-sandbox-engine/engine/world';
 import type { World } from '@lewismoten/gamemaker-sandbox-engine/engine/world';
-import { CameraLog, screenOrigin } from '@lewismoten/gamemaker-sandbox-tools/kit/cameraLog';
+import { CameraLog, screenOrigin } from '../src/kit/cameraLog';
 
 const world = (mx: number, my: number, ny = 0) =>
   ({ mx, my, scroll: { nx: 0, ny, littleShiftx: 0, littleShifty: 0 }, ci: { nextx: 0, nexty: 0 } }) as unknown as World;

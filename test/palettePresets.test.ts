@@ -1,6 +1,6 @@
 // Palette templates preserve DOS slots, hardware counts, six-bit limits and independent copies.
 import { describe, expect, it } from 'vitest';
-import { PALETTE_PRESETS, createPalettePreset } from '@lewismoten/gamemaker-sandbox-tools/palettes';
+import { PALETTE_PRESETS, createPalettePreset } from '../src/palettes';
 
 const unique = (id: string, entries: number) => {
   const palette = createPalettePreset(id);

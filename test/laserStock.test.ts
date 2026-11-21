@@ -1,8 +1,8 @@
 // Nesting regressions: a rotated host, repeated names, round holes and a concave hole whose empty bounding box is misleading.
 import { describe, expect, it } from 'vitest';
-import { Part } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
-import { packKitStock } from '@lewismoten/gamemaker-sandbox-tools/kit/laserStock';
-import type { Pt } from '@lewismoten/gamemaker-sandbox-tools/kit/laserSvg';
+import { Part } from '../src/kit/laserLayout';
+import { packKitStock } from '../src/kit/laserStock';
+import type { Pt } from '../src/kit/laserSvg';
 import { checkStockCuts } from './laserStockAssertions';
 
 const rect = (x: number, y: number, w: number, h: number): Pt[] => [

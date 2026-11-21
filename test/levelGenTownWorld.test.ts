@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import type { RoleMap } from '@lewismoten/gamemaker-sandbox-tools/kit/blockRoles';
-import { generate, proveResult, verifyReach, type GenKind } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen';
+import type { RoleMap } from '../src/kit/blockRoles';
+import { generate, proveResult, verifyReach, type GenKind } from '../src/kit/levelGen/index';
 
 const set = (...pairs: [number, string[]][]): RoleMap => Object.fromEntries(pairs.map(([n, roles]) => [n, { roles }])) as RoleMap;
 const townRoles = set([1, ['wall']], [2, ['floor']], [3, ['path']], [4, ['tree']], [5, ['door']], [6, ['decoration']], [7, ['wall-top']]);

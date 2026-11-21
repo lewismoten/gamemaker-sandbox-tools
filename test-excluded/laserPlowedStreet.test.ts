@@ -4,7 +4,7 @@
 import { describe, expect, it } from 'vitest';
 import { STOCK, type StockSize } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
 import { stockProblems } from '@lewismoten/gamemaker-sandbox-tools/kit/laserStock';
-import { checkStockCuts } from './laserStockAssertions';
+import { checkStockCuts } from '../test/laserStockAssertions';
 import { CUT, ENGRAVE } from '@lewismoten/gamemaker-sandbox-tools/kit/laserSvg';
 import { buildPlowedStreet, fittingTable } from '../../games/snowbound/laser/plowedBuild';
 import { MALL, PITCH, STEM, STREET, STREETS, checkLock, plate } from '../../games/snowbound/laser/plowedDims';

@@ -2,12 +2,12 @@
 // jump, with margin at the default difficulty; the same seed gives the same blocks; roles that are missing
 // leave their parts out.
 import { describe, expect, it, vi } from 'vitest';
-import type { RoleMap } from '@lewismoten/gamemaker-sandbox-tools/kit/blockRoles';
-import { generate, generatePlatform, proveResult, type GenResult } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen';
-import { heroPhysics, weaker } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/jumpModel';
-import { capability } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/platformCap';
-import { reachFrom } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/platformReach';
-import { newArea, type Area } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/grid';
+import type { RoleMap } from '../src/kit/blockRoles';
+import { generate, generatePlatform, proveResult, type GenResult } from '../src/kit/levelGen/index';
+import { heroPhysics, weaker } from '../src/kit/levelGen/jumpModel';
+import { capability } from '../src/kit/levelGen/platformCap';
+import { reachFrom } from '../src/kit/levelGen/platformReach';
+import { newArea, type Area } from '../src/kit/levelGen/grid';
 import { newCharacter } from '@lewismoten/gamemaker-sandbox-engine/formats/character';
 import { starterHero } from './platformTestHero';
 

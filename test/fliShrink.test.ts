@@ -16,7 +16,7 @@ import {
   shrinkFrames,
   snapColorsStep,
   type FliFrames,
-} from '@lewismoten/gamemaker-sandbox-tools/kit/fliShrink';
+} from '../src/kit/fliShrink';
 
 // Under a second on a fast machine; the 5 s default timed out on a slower one under load.
 const SLOW = 30_000;

@@ -2,8 +2,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import { AudioEngine } from '@lewismoten/gamemaker-sandbox-engine/audio/engine';
 import { loadSong } from '@lewismoten/gamemaker-sandbox-engine/audio/cmfLoad';
-import { blankSong } from '@lewismoten/gamemaker-sandbox-tools/music/compose';
-import { sample, osc } from '@lewismoten/gamemaker-sandbox-tools/audio';
+import { blankSong } from '../src/music/compose';
+import { sample, osc } from '../src/audio';
 
 const mockAudio = () => {
   const audio = new AudioEngine();

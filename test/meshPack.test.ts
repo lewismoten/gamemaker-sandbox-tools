@@ -12,12 +12,12 @@ import {
   unpackStl,
   fromPlanes,
   toPlanes,
-} from '@lewismoten/gamemaker-sandbox-tools/pack/meshPack';
-import { writeStl } from '@lewismoten/gamemaker-sandbox-tools/mesh/stl';
-import type { Mesh } from '@lewismoten/gamemaker-sandbox-tools/mesh/mesh';
-import { pack3mf, threeMfEntries, unpack3mf } from '@lewismoten/gamemaker-sandbox-tools/pack/threeMfPack';
-import { write3mf } from '@lewismoten/gamemaker-sandbox-tools/mesh/threeMf';
-import { readZip, writeZip } from '@lewismoten/gamemaker-sandbox-tools/mesh/zipFile';
+} from '../src/pack/meshPack';
+import { writeStl } from '../src/mesh/stl';
+import type { Mesh } from '../src/mesh/mesh';
+import { pack3mf, threeMfEntries, unpack3mf } from '../src/pack/threeMfPack';
+import { write3mf } from '../src/mesh/threeMf';
+import { readZip, writeZip } from '../src/mesh/zipFile';
 import { deflateRawSync, inflateRawSync } from 'node:zlib';
 
 const tetra: Mesh = {

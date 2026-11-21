@@ -1,10 +1,10 @@
 // The voxel mesher and the pixel-figure builder: closed, one piece, a bounded triangle count, and a 3MF that reads back with at most 4 bodies.
 import { describe, expect, it } from 'vitest';
 import { deflateRawSync, inflateRawSync } from 'node:zlib';
-import { inspectMesh } from '@lewismoten/gamemaker-sandbox-tools/mesh/meshCheck';
-import { pixelFigure } from '@lewismoten/gamemaker-sandbox-tools/mesh/pixelFigure';
-import { read3mf, write3mf } from '@lewismoten/gamemaker-sandbox-tools/mesh/threeMf';
-import { voxelMesh } from '@lewismoten/gamemaker-sandbox-tools/mesh/voxel';
+import { inspectMesh } from '../src/mesh/meshCheck';
+import { pixelFigure } from '../src/mesh/pixelFigure';
+import { read3mf, write3mf } from '../src/mesh/threeMf';
+import { voxelMesh } from '../src/mesh/voxel';
 
 describe('voxelMesh', () => {
   it('merges a box into 12 triangles', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Grid } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGrid';
+import { Grid } from '../src/kit/levelGrid';
 
 describe('Grid', () => {
   it('paints rectangles, rows and columns and gives rows of text', () => {

@@ -3,7 +3,7 @@
 // and the print pages fit Letter and A4 and write a real PDF and PNG.
 import { describe, expect, it } from 'vitest';
 import { Part, STOCK, type StockSize } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
-import { checkStockCuts } from './laserStockAssertions';
+import { checkStockCuts } from '../test/laserStockAssertions';
 import { stockProblems } from '@lewismoten/gamemaker-sandbox-tools/kit/laserStock';
 import { CUT, ENGRAVE, SCORE } from '@lewismoten/gamemaker-sandbox-tools/kit/laserSvg';
 import { EDGES_COUNT, WIDTH, edgeLen } from '../../games/tuneup/laser/papercraftDims';

@@ -1,9 +1,9 @@
 // Independent sheet checks: exact compensated cut distances across different pieces, quantities and cutter margins.
 import { expect } from 'vitest';
-import { cutSpacingProblems } from '@lewismoten/gamemaker-sandbox-tools/kit/laserClearance';
-import { placePart, STOCK, type Part, type Placed, type StockSize } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
-import { stockProblems } from '@lewismoten/gamemaker-sandbox-tools/kit/laserStock';
-import { HAIRLINE, LaserSheet } from '@lewismoten/gamemaker-sandbox-tools/kit/laserSvg';
+import { cutSpacingProblems } from '../src/kit/laserClearance';
+import { placePart, STOCK, type Part, type Placed, type StockSize } from '../src/kit/laserLayout';
+import { stockProblems } from '../src/kit/laserStock';
+import { HAIRLINE, LaserSheet } from '../src/kit/laserSvg';
 
 export function checkStockCuts(sheets: { sheet: LaserSheet; placed: Placed[] }[], stock: StockSize, parts: { part: Part; qty: number }[], gap = 4) {
   const placed = sheets.flatMap((s) => s.placed);

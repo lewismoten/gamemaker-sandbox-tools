@@ -1,6 +1,6 @@
 // Applying many short lines must not turn each line into a function argument.
 import { expect, it } from 'vitest';
-import { diffFile, patchFile } from '@lewismoten/gamemaker-sandbox-tools/delta';
+import { diffFile, patchFile } from '../src/delta';
 
 it('applies a large line delta without spreading the inserted lines as arguments', () => {
   const before = new Uint8Array();

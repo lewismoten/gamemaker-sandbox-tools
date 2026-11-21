@@ -1,7 +1,7 @@
 // Spectral gates must reject bright audio, preserve protected encodings and filter aliases.
 import { describe, expect, it } from 'vitest';
 import { encodeVoc, decodeVoc } from '@lewismoten/gamemaker-sandbox-engine/formats/voc';
-import { lowerPcmVoc, vocBandShares } from '@lewismoten/gamemaker-sandbox-tools/kit/vocRate';
+import { lowerPcmVoc, vocBandShares } from '../src/kit/vocRate';
 
 const tone = (hz: number) =>
   encodeVoc(

@@ -1,7 +1,7 @@
 // The build-time palette merge: identical palettes collapse, scenes are repointed, nothing else moves.
 import { describe, expect, it } from 'vitest';
 import { ADVTYPE, emptyScene, newGame, parseGame, serializeGame, type Game } from '@lewismoten/gamemaker-sandbox-engine/formats/game';
-import { identicalPalettes, mergeIdenticalPalettes } from '@lewismoten/gamemaker-sandbox-tools/kit/palMerge';
+import { identicalPalettes, mergeIdenticalPalettes } from '../src/kit/palMerge';
 
 const pal = (v: number) => new Uint8Array(768).fill(v);
 

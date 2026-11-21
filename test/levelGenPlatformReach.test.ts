@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { arcOf, heroPhysics, weaker } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/jumpModel';
-import { capability } from '@lewismoten/gamemaker-sandbox-tools/kit/levelGen/platformCap';
+import { arcOf, heroPhysics, weaker } from '../src/kit/levelGen/jumpModel';
+import { capability } from '../src/kit/levelGen/platformCap';
 import { starterHero } from './platformTestHero';
 
 describe('jump model', () => {

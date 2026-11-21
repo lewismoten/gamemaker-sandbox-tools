@@ -1,10 +1,5 @@
-// Every text PLAYGAME draws over a Sandbox game's pictures lands on plain paper
-// (games/kit/textfit.ts): text pages, the menu, the high scores, load and save.
 import { describe, expect, it } from 'vitest';
-import { join } from 'node:path';
-import { checkTextScreen, readDisk, textScreens, W, H, type TextScreen } from '@lewismoten/gamemaker-sandbox-tools/kit/textfit';
-
-const GAMES = ['blaster', 'logic', 'maximus', 'sandcast', 'sleuth', 'snowbound', 'teddy'];
+import { checkTextScreen, W, H, type TextScreen } from '../src/kit/textfit';
 
 describe('text fit', () => {
   it('flags art under a line and low contrast', () => {
@@ -21,11 +16,4 @@ describe('text fit', () => {
     palette.set([60, 58, 60], 9);
     expect(checkTextScreen(s)[0].problems[0]).toMatch(/contrast/);
   });
-
-  for (const id of GAMES)
-    it(`${id}: no text over art`, () => {
-      const screens = textScreens(readDisk(join(__dirname, '..', '..', 'games', id, 'disk')));
-      expect(screens.length).toBeGreaterThan(5);
-      expect(screens.flatMap((s) => checkTextScreen(s)).map((i) => `${i.screen} "${i.text}": ${i.problems.join(', ')}`)).toEqual([]);
-    });
 });

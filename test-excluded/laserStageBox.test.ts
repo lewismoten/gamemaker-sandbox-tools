@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest';
 import { notchSpans, offsetPoly, outlineFromRects } from '@lewismoten/gamemaker-sandbox-tools/kit/laserJoints';
 import { STOCK, type StockSize } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
 import { stockProblems } from '@lewismoten/gamemaker-sandbox-tools/kit/laserStock';
-import { checkStockCuts } from './laserStockAssertions';
+import { checkStockCuts } from '../test/laserStockAssertions';
 import { CUT, ENGRAVE } from '@lewismoten/gamemaker-sandbox-tools/kit/laserSvg';
 import { checkMechanism, dims } from '../../games/sleuth/laser/stageBoxDims';
 import { buildStageBox, fittingTable } from '../../games/sleuth/laser/stageBoxBuild';

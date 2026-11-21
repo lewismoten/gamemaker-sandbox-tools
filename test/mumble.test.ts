@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { decodeVoc } from '@lewismoten/gamemaker-sandbox-engine/formats/voc';
-import { MUMBLE_VOICES, mumble, mumbleSeconds, mumbleVoc, syllablesFromText, type Syllable } from '@lewismoten/gamemaker-sandbox-tools/kit/mumble';
+import { MUMBLE_VOICES, mumble, mumbleSeconds, mumbleVoc, syllablesFromText, type Syllable } from '../src/kit/mumble';
 
 const LINE: Syllable[] = [
   ['e', 210, 260, 0.2, 0.03],

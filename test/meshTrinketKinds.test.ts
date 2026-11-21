@@ -1,8 +1,8 @@
 // Tests: the shared trinket kinds (mesh/trinketKinds, mesh/sdfShapes) mesh into closed solids that print without supports.
 import { describe, expect, it } from 'vitest';
-import { meshFieldTrinket } from '@lewismoten/gamemaker-sandbox-tools/mesh/fieldTrinket';
-import { circle2, pixelText2, union2 } from '@lewismoten/gamemaker-sandbox-tools/mesh/sdfShapes';
-import { die, plate, tagOutline } from '@lewismoten/gamemaker-sandbox-tools/mesh/trinketKinds';
+import { meshFieldTrinket } from '../src/mesh/fieldTrinket';
+import { circle2, pixelText2, union2 } from '../src/mesh/sdfShapes';
+import { die, plate, tagOutline } from '../src/mesh/trinketKinds';
 
 const make = (mm: (x: number, y: number, z: number) => number, half: number, top: number) =>
   meshFieldTrinket(

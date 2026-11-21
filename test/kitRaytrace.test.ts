@@ -15,7 +15,7 @@ import {
   Sphere,
   Tri,
   type Material,
-} from '@lewismoten/gamemaker-sandbox-tools/kit/raytrace';
+} from '../src/kit/raytrace';
 
 const m: Material = () => ({ color: [1, 1, 1], kd: 1, ks: 0, shine: 1, mirror: 0 });
 const down = norm([0, -1, 0]);

@@ -1,7 +1,7 @@
 // Palette construction shares algorithms while callers retain their ramp colors and lighting choices.
 import { expect, it } from 'vitest';
-import { buildRampPalette } from '@lewismoten/gamemaker-sandbox-tools/kit/palRamps';
-import { lightColor } from '@lewismoten/gamemaker-sandbox-tools/colors';
+import { buildRampPalette } from '../src/kit/palRamps';
+import { lightColor } from '../src/colors';
 it('applies named replacements before color transforms and exposes the same builder', () => {
   const pal = buildRampPalette(
     [

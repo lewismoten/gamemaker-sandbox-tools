@@ -1,6 +1,6 @@
 // HSV conversions are shared by browser color picking and game builders.
 import { describe, expect, it } from 'vitest';
-import { hsvToRgb, rgbToHsv, type RGB } from '@lewismoten/gamemaker-sandbox-tools/colors';
+import { hsvToRgb, rgbToHsv, type RGB } from '../src/colors';
 
 describe('RGB and HSV', () => {
   it('handles hue sectors, grayscale and wrapped hue', () => {

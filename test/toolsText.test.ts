@@ -1,7 +1,7 @@
 // Reusable fonts retain both letter styles, the extended symbols, custom art, and legacy effect placement.
 import { expect, it } from 'vitest';
-import { microGlyphs } from '@lewismoten/gamemaker-sandbox-tools/microFont';
-import { Pixels, createPcText, createMicroText, microAdvance, microWidth } from '@lewismoten/gamemaker-sandbox-tools/drawing';
+import { microGlyphs } from '../src/microFont';
+import { Pixels, createPcText, createMicroText, microAdvance, microWidth } from '../src/drawing';
 it('retains exact font coverage and spacing when adapting older lettering', () => {
   expect(microAdvance('', 2)).toBe(-2);
   expect(microWidth('', 2)).toBe(0);

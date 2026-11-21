@@ -1,6 +1,6 @@
 // Shared sprite operations preserve palette indexes, in-place variants, and fractional sampling.
 import { expect, it } from 'vitest';
-import { Pixels, outline, outlineInPlace, scaleBlitTransparent, asciiSprite, turn90, resampleBlit } from '@lewismoten/gamemaker-sandbox-tools/drawing';
+import { Pixels, outline, outlineInPlace, scaleBlitTransparent, asciiSprite, turn90, resampleBlit } from '../src/drawing';
 it('supports copied and in-place outlines with configurable transparent and excluded ink', () => {
   const src = new Pixels(5, 5, 255).set(2, 2, 1);
   expect(outline(src, 1, { ignoreInk: true }).px).toEqual(src.px);

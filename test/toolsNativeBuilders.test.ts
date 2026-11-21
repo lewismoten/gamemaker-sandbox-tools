@@ -1,13 +1,13 @@
 // Portable builders encode native files and keep legacy simulator initialization explicit.
 import { expect, it } from 'vitest';
-import { recordedDemo } from '@lewismoten/gamemaker-sandbox-tools/kit/recordedDemo';
-import { parseRecording } from '@lewismoten/gamemaker-sandbox-tools/formats/recording';
-import { expectScene } from '@lewismoten/gamemaker-sandbox-tools/kit/routeChecks';
-import { initializeScene, legacySceneInits } from '@lewismoten/gamemaker-sandbox-tools/kit/sceneInit';
-import { Sim } from '@lewismoten/gamemaker-sandbox-tools/simulation';
-import { newMap } from '@lewismoten/gamemaker-sandbox-tools/formats/map';
-import { emptyBlock } from '@lewismoten/gamemaker-sandbox-tools/formats/blocks';
-import { newCharacter } from '@lewismoten/gamemaker-sandbox-tools/formats/character';
+import { recordedDemo } from '../src/kit/recordedDemo';
+import { parseRecording } from '../src/formats/recording';
+import { expectScene } from '../src/kit/routeChecks';
+import { initializeScene, legacySceneInits } from '../src/kit/sceneInit';
+import { Sim } from '../src/simulation';
+import { newMap } from '../src/formats/map';
+import { emptyBlock } from '../src/formats/blocks';
+import { newCharacter } from '../src/formats/character';
 it('encodes recorded keys and configurable Escape timing without mutating the source', () => {
   const pairs = [1, 77, 5, 205];
   expect(parseRecording(recordedDemo(pairs, 7, 2))).toEqual([

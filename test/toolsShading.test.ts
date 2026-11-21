@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { Pixels } from '@lewismoten/gamemaker-sandbox-tools/kit/pixels';
-import { rampShift } from '@lewismoten/gamemaker-sandbox-tools/kit/shading';
+import { Pixels } from '../src/kit/pixels';
+import { rampShift } from '../src/kit/shading';
 
 describe('rampShift', () => {
   it('steps ramp colors where the level is full and leaves other colors and unshaded spots alone', () => {

@@ -1,8 +1,8 @@
 // kit/shading gradient(): the row-dithered blend (each row one color) and what it saves in a GIF.
 import { describe, expect, it } from 'vitest';
 import { encodeGif } from '@lewismoten/gamemaker-sandbox-engine/formats/gif';
-import { Pixels } from '@lewismoten/gamemaker-sandbox-tools/kit/pixels';
-import { gradient } from '@lewismoten/gamemaker-sandbox-tools/kit/shading';
+import { Pixels } from '../src/kit/pixels';
+import { gradient } from '../src/kit/shading';
 
 const ramp = [10, 11, 12, 13, 14, 15];
 

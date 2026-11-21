@@ -1,9 +1,9 @@
 // Tests: thinning a mesh (mesh/decimate) and sampling a field once (mesh/sampledField).
 import { describe, expect, it } from 'vitest';
-import { decimate } from '@lewismoten/gamemaker-sandbox-tools/mesh/decimate';
-import { inspectMesh } from '@lewismoten/gamemaker-sandbox-tools/mesh/meshCheck';
-import { sampledField } from '@lewismoten/gamemaker-sandbox-tools/mesh/sampledField';
-import { surfaceNets } from '@lewismoten/gamemaker-sandbox-tools/mesh/surfaceNets';
+import { decimate } from '../src/mesh/decimate';
+import { inspectMesh } from '../src/mesh/meshCheck';
+import { sampledField } from '../src/mesh/sampledField';
+import { surfaceNets } from '../src/mesh/surfaceNets';
 
 const ball = (x: number, y: number, z: number) => Math.hypot(x, y, z) - 10;
 const box = { min: [-12, -12, -12] as [number, number, number], max: [12, 12, 12] as [number, number, number], cell: 0.7 };

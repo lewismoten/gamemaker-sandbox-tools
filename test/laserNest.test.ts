@@ -1,7 +1,7 @@
 // Nesting: guests land in a hole with the wood gap kept, and nestProblems finds nothing in a placement nest() made.
 import { describe, expect, it } from 'vitest';
-import { nest, nestProblems, NEST_GAP, type Guest } from '@lewismoten/gamemaker-sandbox-tools/kit/laserNest';
-import type { Part } from '@lewismoten/gamemaker-sandbox-tools/kit/laserLayout';
+import { nest, nestProblems, NEST_GAP, type Guest } from '../src/kit/laserNest';
+import type { Part } from '../src/kit/laserLayout';
 
 const part = {} as Part;
 describe('laserNest', () => {
