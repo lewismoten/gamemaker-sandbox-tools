@@ -6,8 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lewismoten/GameMaker-SandboxEdition.git",
-    "directory": "web/packages/tools"
+    "url": "git+https://github.com/lewismoten/gamemaker-sandbox-tools.git"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -239,12 +238,15 @@
   "scripts": {
     "build": "node build.js",
     "prepack": "npm run build",
-    "verify": "npm run build && node verify.js"
+    "verify": "npm run build && node verify.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^22.20.5",
-    "typescript": "~5.9.0",
-    "vite": "^7.1.0"
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3",
+    "vite": "7.3.8",
+    "vitest": "5.1.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -253,5 +255,9 @@
     "@lewismoten/gamemaker-sandbox-engine": "^3.2.0",
     "@lewismoten/gamemaker-sandbox-archives": "^3.2.0"
   },
-  "author": "Lewis Moten"
+  "author": "Lewis Moten",
+  "homepage": "https://github.com/lewismoten/gamemaker-sandbox-tools#readme",
+  "bugs": {
+    "url": "https://github.com/lewismoten/gamemaker-sandbox-tools/issues"
+  }
 }
