@@ -1,13 +1,15 @@
 # @lewismoten/gamemaker-sandbox-tools
 
-Version **3.8.0**. Tools for creating and checking native RSD Game-Maker data, without
+Version **3.9.0**. Tools for creating and checking native RSD Game-Maker data, without
 game assets. ES modules with TypeScript declarations; Node.js **22.12+**. Runtime npm
 dependencies are `@lewismoten/gamemaker-sandbox-engine` **^3.2.0** and
 `@lewismoten/gamemaker-sandbox-archives` **^3.2.0**.
 
-Install through your configured npm registry (configure its authentication if needed):
+Install from GitHub Packages with a token that has `read:packages` access. From the consuming project, configure the scope and sign in before installing:
 
 ```sh
+npm config set @lewismoten:registry https://npm.pkg.github.com/ --location=project
+npm login --scope=@lewismoten --registry=https://npm.pkg.github.com/ --auth-type=legacy
 npm install --save-dev @lewismoten/gamemaker-sandbox-tools
 ```
 
@@ -189,7 +191,9 @@ Install FFmpeg on your PATH to include the external audio decoder integration te
 Vitest runs the package suites in `test/`. Game and editor integration cases that
 require the app checkout are outside the standalone suite.
 
-To develop against local dependencies, run `npm ci && npm run build && npm link`
+To link only this package, run `npm link` in the built tools checkout.
+
+To also develop against local dependencies, run `npm ci && npm run build && npm link`
 in each engine and archives checkout, starting with engine. Then run these commands
 in the tools checkout:
 
