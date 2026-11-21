@@ -1,0 +1,50 @@
+name: Publish tools
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+  packages: write
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '26'
+      - name: Check tag and collect release notes
+        run: |
+          git merge-base --is-ancestor HEAD origin/main
+          version=$(node -p "require('./package.json').version")
+          test "$GITHUB_REF_NAME" = "v$version"
+          awk -v heading="[$version]" '
+            /^## / { if (found) exit; found = ($2 == heading); next }
+            found && /^\[[^]]+\]:/ { exit }
+            found { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npm run typecheck
+      - name: Generate runtime SBOM
+        run: npm sbom --sbom-format cyclonedx --package-lock-only --omit=dev > "$RUNNER_TEMP/tools-$GITHUB_REF_NAME.sbom.cdx.json"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "26"
+          registry-url: https://npm.pkg.github.com/
+          scope: "@lewismoten"
+      - name: Publish to GitHub Packages
+        run: npm publish --ignore-scripts --registry=https://npm.pkg.github.com/
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+      - name: Create GitHub Release
+        run: gh release create "$GITHUB_REF_NAME" --verify-tag --title "Tools $GITHUB_REF_NAME" --notes-file "$RUNNER_TEMP/notes.md" "$RUNNER_TEMP/tools-$GITHUB_REF_NAME.sbom.cdx.json"
+        env:
+          GH_TOKEN: ${{ github.token }}
