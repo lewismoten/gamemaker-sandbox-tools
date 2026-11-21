@@ -1,6 +1,6 @@
 # @lewismoten/gamemaker-sandbox-tools
 
-Version **3.4.0**. Tools for creating and checking native RSD Game-Maker data, without
+Version **3.8.0**. Tools for creating and checking native RSD Game-Maker data, without
 game assets. ES modules with TypeScript declarations; Node.js **22.12+**. Runtime npm
 dependencies are `@lewismoten/gamemaker-sandbox-engine` **^3.2.0** and
 `@lewismoten/gamemaker-sandbox-archives` **^3.2.0**.
@@ -169,24 +169,51 @@ Laser helpers use millimeters and take caller-supplied designs:
 | `kit/*`                           | Drawing, text, palette, song, disk, simulation, layout and build helpers          |
 
 Wildcard paths expose existing modules, not arbitrary filenames. The
-[public source tree](https://github.com/lewismoten/GameMaker-SandboxEdition/tree/master/web/packages/tools/src)
-and [export map](https://github.com/lewismoten/GameMaker-SandboxEdition/blob/master/web/packages/tools/package.json)
+[public source tree](src)
+and [export map](package.json)
 list their modules and signatures. Embroidery output has not been tested on a real machine;
 sew a test on scrap before using a design.
 
-## Development and license
+## Development and testing
 
-Run `npm run build`, `npm run verify` or `npm pack` in the package folder. Standalone
-builds use only package-owned source and declared dependencies. Repository development
-uses root `npm ci`; root `npm run verify:packages` checks isolated builds with packed
-sibling dependencies. See the
-[monorepo guide](https://github.com/lewismoten/GameMaker-SandboxEdition/blob/master/docs/monorepo.md)
-and [release guide](https://github.com/lewismoten/GameMaker-SandboxEdition/blob/master/docs/package-releases.md).
+Use Node.js 26 to match CI. From this checkout run:
 
-The tarball includes JavaScript, declarations, README, changelog,
-[LICENSE](https://github.com/lewismoten/GameMaker-SandboxEdition/blob/master/web/packages/tools/LICENSE)
-and [NOTICE.md](https://github.com/lewismoten/GameMaker-SandboxEdition/blob/master/web/packages/tools/NOTICE.md).
-Source is MIT licensed; no game assets or decoder binaries are bundled.
+```sh
+npm ci
+npm run build
+npm test
+npm run typecheck
+```
+
+Install FFmpeg on your PATH to include the external audio decoder integration tests.
+Vitest runs the package suites in `test/`. Game and editor integration cases that
+require the app checkout are outside the standalone suite.
+
+To develop against local dependencies, run `npm ci && npm run build && npm link`
+in each engine and archives checkout, starting with engine. Then run these commands
+in the tools checkout:
+
+```sh
+npm link --no-save --package-lock=false @lewismoten/gamemaker-sandbox-engine @lewismoten/gamemaker-sandbox-archives
+npm run build
+npm link
+```
+
+In the app checkout, run `npm link --no-save --package-lock=false @lewismoten/gamemaker-sandbox-tools`
+from the consuming package. Rebuild each changed package before exercising the app.
+Run `npm ci` to restore the locked dependencies.
+
+## Releases
+
+Update the package and lockfile version together and add a dated `## [VERSION]`
+section to CHANGELOG.md. Run the development checks and `npm pack --dry-run`.
+Commit the release on main, then tag that commit `vVERSION` and push the tag.
+The publish workflow validates the tag, repeats the checks, publishes to GitHub
+Packages, and creates a GitHub Release with the changelog entry and a CycloneDX
+SBOM of the runtime dependencies.
+
+The tarball includes JavaScript, declarations, README, changelog, [LICENSE](LICENSE),
+and [NOTICE.md](NOTICE.md). The source uses the MIT license.
 
 ## Tiled signs
 
