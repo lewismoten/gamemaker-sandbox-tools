@@ -1,11 +1,15 @@
 # @lewismoten/gamemaker-sandbox-tools
 
-Version **3.9.0**. Tools for creating and checking native RSD Game-Maker data, without
+[![npm](https://img.shields.io/npm/v/@lewismoten/gamemaker-sandbox-tools?label=npm)](https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools) [![GitHub release](https://img.shields.io/github/v/release/lewismoten/gamemaker-sandbox-tools?label=release)](https://github.com/lewismoten/gamemaker-sandbox-tools/releases/latest)
+
+Tools for creating and checking native RSD Game-Maker data, without
 game assets. ES modules with TypeScript declarations; Node.js **22.12+**. Runtime npm
-dependencies are `@lewismoten/gamemaker-sandbox-engine` **^3.2.0** and
-`@lewismoten/gamemaker-sandbox-archives` **^3.2.0**.
+dependencies are `@lewismoten/gamemaker-sandbox-engine` and
+`@lewismoten/gamemaker-sandbox-archives` (supported ranges in `package.json`).
 
 Install from GitHub Packages with a token that has `read:packages` access. From the consuming project, configure the scope and sign in before installing:
+
+From npmjs (no token needed): `npm install @lewismoten/gamemaker-sandbox-tools`. From GitHub Packages:
 
 ```sh
 npm config set @lewismoten:registry https://npm.pkg.github.com/ --location=project
