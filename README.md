@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/lewismoten/gamemaker-sandbox-tools/main/.github/social-preview.jpg" alt="Game-Maker Sandbox Tools: build, inspect and verify Game-Maker data" width="640" height="320"></p>
+
 # @lewismoten/gamemaker-sandbox-tools
 
 [![npm](https://img.shields.io/npm/v/@lewismoten/gamemaker-sandbox-tools?label=npm)](https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools) [![GitHub release](https://img.shields.io/github/v/release/lewismoten/gamemaker-sandbox-tools?label=release)](https://github.com/lewismoten/gamemaker-sandbox-tools/releases/latest)
